@@ -2,127 +2,206 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Our Services</title>
+<title>Sri Garuda Cleaning Services | Services</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Flaticon CSS -->
-<link rel="stylesheet" href="css/flaticon.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
-*{
+
+
+
+body,html{
     margin:0;
     padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-body{
-    background:#f4f6f9;
-}
-
-.container{
-    max-width:1200px;
+    overflow-x: hidden;
+       font-family: 'Overlock', cursive;
+    background:#ffffff;
+} 
+/* Section */
+.services-section{
+    max-width:1400px;
     margin:auto;
-    padding:60px 20px;
+    padding:90px 20px;
 }
 
+/* Title */
 .section-head{
     text-align:center;
-    margin-bottom:50px;
+    margin-bottom:60px;
 }
 
 .section-title-row{
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     gap:10px;
     margin-bottom:10px;
 }
 
 .section-title-row img{
     width:28px;
-    height:auto;
 }
 
 .section-title-row h4{
-    font-size:18px;
-    font-weight:700;
-    /* letter-spacing:2px; */
-    /* text-transform:uppercase; */
-    color:#022351;
-    margin:0;
+    font-size:16px;
+    letter-spacing:2px;
+    color:#153E6D;
+    text-transform:uppercase;
 }
 
 .section-head h2{
-    font-size:36px;
+    font-size:42px;
+    color:#022351;
+    font-weight:800;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:35px;
+}
+
+/* Tablet */
+@media(max-width: 1024px){
+    .services-grid{
+        grid-template-columns:repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media(max-width: 600px){
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+
+/* Card */
+.service-card{
+    background:#fff;
+    border-radius:26px;
+    padding:38px 32px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+    transition:0.4s ease;
+    min-height:360px;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 30px 60px rgba(0,0,0,0.12);
+}
+
+/* Active Highlight Card */
+.service-card:hover{
+    background:#022351;
+    color:#ffffff;
+    box-shadow:0 25px 60px rgba(2,35,81,0.45);
+}
+.service-card:hover .service-icon img{
+    filter: brightness(0) saturate(100%) 
+            invert(82%) sepia(53%) saturate(749%) 
+            hue-rotate(2deg) brightness(105%) contrast(105%);
+}
+
+
+/* Icon */
+.service-icon{
+    margin-bottom:25px;
+    display:flex;
+    align-items:center;
+}
+
+.service-icon img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    filter: brightness(0) saturate(100%) 
+            invert(11%) sepia(77%) saturate(2027%) 
+            hue-rotate(200deg) brightness(90%) contrast(101%);
+}
+
+/* Title */
+.service-card h3{
+    font-size:26px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+/* Text */
+.service-card p{
+    font-size:15px;
+    line-height:1.7;
+    color:#000;
+}
+
+.service-card:hover p{
+    color:#e6ecff;
+}
+
+/* Read More */
+.read-more{
+    position:absolute;
+    bottom:30px;
+    left:32px;
+    text-decoration:none;
     font-weight:700;
-    color:#222;
-    margin:0;
-    line-height:1.3;
+    font-size:15px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#022351;
+    transition:0.3s;
+}
+
+.read-more span{
+    transition:0.3s ease;
+}
+
+.service-card:hover .read-more span{
+    transform:translateX(6px);
+}
+
+.service-card:hover .read-more{
+    color:#FFD700;
+}
+
+/* Background watermark icon */
+.bg-icon{
+    position:absolute;
+    right:-40px;
+    bottom:-40px;
+    opacity:0.06;
+}
+
+.bg-icon img{
+    width:180px;
+}
+
+/* On hover → light gray */
+ .bg-icon:hover img{
+    filter: brightness(0) saturate(100%) 
+            invert(80%) sepia(0%) saturate(0%) 
+            hue-rotate(0deg) brightness(100%) contrast(90%);
 }
 
 /* Responsive */
 @media(max-width:768px){
     .section-head h2{
-        font-size:26px;
+        font-size:28px;
     }
-    .section-title-row h4{
-        font-size:14px;
+
+    .service-card{
+        padding:30px 25px 70px;
+        min-height:auto;
     }
-}
 
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-    gap:25px;
-}
-
-.service-card{
-    background:#fff;
-    border-radius:14px;
-    padding:30px 25px;
-    text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
-    transition:0.3s ease;
-}
-
-.service-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.12);
-}
-
-.service-icon{
-    width:80px;
-    height:80px;
-    background:#eaf3ff;
-    color:#1e5eff;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 15px;
-}
-
-.service-icon i{
-    font-size:36px;
-}
-
-.service-card h3{
-    font-size:20px;
-    margin-bottom:10px;
-    color:#222;
-}
-
-.service-card p{
-    font-size:14px;
-    color:#666;
-    line-height:1.6;
-}
-
-/* Responsive */
-@media(max-width:600px){
-    .section-head h2{
-        font-size:26px;
+    .bg-icon img{
+        width:120px;
     }
 }
 </style>
@@ -130,87 +209,107 @@ body{
 
 <body>
 
-<div class="container">
+<section class="services-section">
 
-<div class="section-head">
-    <div class="section-title-row">
-        <img src="./image/wiping-swipe-for-floors.png" loading="lazy" alt="icon">
-        <h4>Services</h4>
+    <!-- TITLE -->
+    <div class="section-head">
+        <div class="section-title-row">
+            <img src="./image/icons/wipe.png" loading="lazy">
+            <h4>Services</h4>
+        </div>
+        <h2>Expert Cleaning Services You Can Trust</h2>
     </div>
-    <h2>Expert Cleaning Services You Can Trust</h2>
-</div>
-
-
+<div class="container-fluid">
+    <!-- SERVICES GRID -->
     <div class="services-grid">
 
         <div class="service-card">
-            <div class="service-icon"><i class="flaticon-toilet-brush"></i></div>
+            <div class="service-icon"><img src="./image/icons/bathroom.png"></div>
             <h3>Bathroom Cleaning</h3>
-            <p>Deep sanitization and hygienic bathroom cleaning services.</p>
+            <p>Deep sanitization, stain removal and hygienic bathroom cleaning.</p>
+            <a href="#" class="read-more">Read More <span>—</span></a>
+            <div class="bg-icon"><img src="./image/icons/bathroom.png"></div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon"><i class="flaticon-kitchen"></i></div>
+            <div class="service-icon"><img src="./image/icons/kitchen.png"></div>
             <h3>Kitchen Cleaning</h3>
-            <p>Oil, grease and stain removal with deep surface cleaning.</p>
+            <p>Oil, grease and surface deep cleaning for hygienic kitchens.</p>
+            <a href="#" class="read-more">Read More <span>—</span></a>
+            <div class="bg-icon"><img src="./image/icons/kitchen.png"></div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon"><i class="flaticon-house"></i></div>
+            <div class="service-icon"><img src="./image/icons/bedroom.png"></div>
             <h3>Bedroom Cleaning</h3>
             <p>Dust-free, fresh and healthy bedroom cleaning services.</p>
+            <a href="#" class="read-more">Read More <span>—</span></a>
+            <div class="bg-icon"><img src="./image/icons/bedroom.png"></div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon"><i class="flaticon-household"></i></div>
+            <div class="service-icon"><img src="./image/icons/fullhome.png"></div>
             <h3>Full Home Cleaning</h3>
             <p>Complete deep cleaning for entire residential spaces.</p>
+            <a href="#" class="read-more">Read More <span>—</span></a>
+            <div class="bg-icon"><img src="./image/icons/fullhome.png"></div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon"><i class="flaticon-carpet"></i></div>
+            <div class="service-icon"><img src="./image/icons/furnished.png"></div>
             <h3>Furnished Home Cleaning</h3>
             <p>Special care cleaning for furnished houses.</p>
+            <a href="#" class="read-more">Read More <span>—</span></a>
+            <div class="bg-icon"><img src="./image/icons/furnished.png"></div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon"><i class="flaticon-clean"></i></div>
+            <div class="service-icon"><img src="./image/icons/unfurnished.png"></div>
             <h3>Unfurnished Home Cleaning</h3>
             <p>Post-construction and empty home deep cleaning.</p>
+            <a href="#" class="read-more">Read More <span>—</span></a>
+            <div class="bg-icon"><img src="./image/icons/unfurnished.png"></div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon"><i class="flaticon-wiping-swipe-for-floors"></i></div>
+            <div class="service-icon"><img src="./image/icons/sump.png"></div>
             <h3>Sump Cleaning</h3>
-            <p>Professional underground water sump cleaning.</p>
+            <p>Professional underground water sump cleaning services.</p>
+            <a href="#" class="read-more">Read More <span>—</span></a>
+            <div class="bg-icon"><img src="./image/icons/sump.png"></div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon"><i class="flaticon-wiper"></i></div>
+            <div class="service-icon"><img src="./image/icons/tank.png"></div>
             <h3>Water Tank Cleaning</h3>
-            <p>Overhead and underground water tank cleaning.</p>
+            <p>Overhead and underground water tank cleaning services.</p>
+            <a href="#" class="read-more">Read More <span>—</span></a>
+            <div class="bg-icon"><img src="./image/icons/tank.png"></div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon"><i class="flaticon-carpet"></i></div>
+            <div class="service-icon"><img src="./image/icons/sofa.png"></div>
             <h3>Sofa Cleaning</h3>
             <p>Fabric and leather sofa deep cleaning services.</p>
+            <a href="#" class="read-more">Read More <span>—</span></a>
+            <div class="bg-icon"><img src="./image/icons/sofa.png"></div>
         </div>
 
         <div class="service-card">
-            <div class="service-icon"><i class="flaticon-cleaning"></i></div>
+            <div class="service-icon"><img src="./image/icons/mattress.png"></div>
             <h3>Mattress Cleaning</h3>
             <p>Dust mite, stain and odor removal services.</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon"><i class="flaticon-office"></i></div>
-            <h3>Carpenter Services</h3>
-            <p>Repair, fitting and maintenance carpenter services.</p>
+            <a href="#" class="read-more">Read More <span>—</span></a>
+            <div class="bg-icon"><img src="./image/icons/mattress.png"></div>
         </div>
 
     </div>
+
 </div>
+</section>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </body>
 </html>
