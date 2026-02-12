@@ -1,0 +1,157 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Garuda Cleaning Services | Gallery</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  background:#f4f7fa;
+  padding:40px;
+}
+
+.gallery-header{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.gallery-header h1{
+  font-size:38px;
+  color:#008060;
+}
+
+.gallery-header p{
+  color:#555;
+  margin-top:10px;
+}
+
+.gallery-container{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap:20px;
+}
+
+.gallery-item{
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  cursor:pointer;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.4s ease;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.1);
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,128,96,0.75);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:20px;
+  font-weight:600;
+  opacity:0;
+  transition:0.4s;
+}
+
+.gallery-item:hover .overlay{
+  opacity:1;
+}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+}
+
+.lightbox span{
+  position:absolute;
+  top:30px;
+  right:40px;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+}
+
+@media(max-width:600px){
+  body{
+    padding:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="gallery-header">
+  <h1>Sri Garuda Cleaning Services</h1>
+  <p>Professional Cleaning Projects Gallery</p>
+</div>
+
+<div class="gallery-container">
+  <div class="gallery-item"><img src="images/g1.jpg" alt=""><div class="overlay">View</div></div>
+  <div class="gallery-item"><img src="images/g2.jpg" alt=""><div class="overlay">View</div></div>
+  <div class="gallery-item"><img src="images/g3.jpg" alt=""><div class="overlay">View</div></div>
+  <div class="gallery-item"><img src="images/g4.jpg" alt=""><div class="overlay">View</div></div>
+  <div class="gallery-item"><img src="images/g5.jpg" alt=""><div class="overlay">View</div></div>
+  <div class="gallery-item"><img src="images/g6.jpg" alt=""><div class="overlay">View</div></div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+const items = document.querySelectorAll('.gallery-item img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+items.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.style.display = 'flex';
+    lightboxImg.src = img.src;
+  });
+});
+
+function closeLightbox(){
+  lightbox.style.display = 'none';
+}
+</script>
+
+</body>
+</html>

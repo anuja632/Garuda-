@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Services</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Flaticon CSS -->
+<link rel="stylesheet" href="css/flaticon.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+.section-head{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title-row{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:10px;
+}
+
+.section-title-row img{
+    width:28px;
+    height:auto;
+}
+
+.section-title-row h4{
+    font-size:18px;
+    font-weight:700;
+    /* letter-spacing:2px; */
+    /* text-transform:uppercase; */
+    color:#022351;
+    margin:0;
+}
+
+.section-head h2{
+    font-size:36px;
+    font-weight:700;
+    color:#222;
+    margin:0;
+    line-height:1.3;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .section-head h2{
+        font-size:26px;
+    }
+    .section-title-row h4{
+        font-size:14px;
+    }
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:25px;
+}
+
+.service-card{
+    background:#fff;
+    border-radius:14px;
+    padding:30px 25px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.service-icon{
+    width:80px;
+    height:80px;
+    background:#eaf3ff;
+    color:#1e5eff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 15px;
+}
+
+.service-icon i{
+    font-size:36px;
+}
+
+.service-card h3{
+    font-size:20px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.service-card p{
+    font-size:14px;
+    color:#666;
+    line-height:1.6;
+}
+
+/* Responsive */
+@media(max-width:600px){
+    .section-head h2{
+        font-size:26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="section-head">
+    <div class="section-title-row">
+        <img src="./image/wiping-swipe-for-floors.png" loading="lazy" alt="icon">
+        <h4>Services</h4>
+    </div>
+    <h2>Expert Cleaning Services You Can Trust</h2>
+</div>
+
+
+    <div class="services-grid">
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-toilet-brush"></i></div>
+            <h3>Bathroom Cleaning</h3>
+            <p>Deep sanitization and hygienic bathroom cleaning services.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-kitchen"></i></div>
+            <h3>Kitchen Cleaning</h3>
+            <p>Oil, grease and stain removal with deep surface cleaning.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-house"></i></div>
+            <h3>Bedroom Cleaning</h3>
+            <p>Dust-free, fresh and healthy bedroom cleaning services.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-household"></i></div>
+            <h3>Full Home Cleaning</h3>
+            <p>Complete deep cleaning for entire residential spaces.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-carpet"></i></div>
+            <h3>Furnished Home Cleaning</h3>
+            <p>Special care cleaning for furnished houses.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-clean"></i></div>
+            <h3>Unfurnished Home Cleaning</h3>
+            <p>Post-construction and empty home deep cleaning.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-wiping-swipe-for-floors"></i></div>
+            <h3>Sump Cleaning</h3>
+            <p>Professional underground water sump cleaning.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-wiper"></i></div>
+            <h3>Water Tank Cleaning</h3>
+            <p>Overhead and underground water tank cleaning.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-carpet"></i></div>
+            <h3>Sofa Cleaning</h3>
+            <p>Fabric and leather sofa deep cleaning services.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-cleaning"></i></div>
+            <h3>Mattress Cleaning</h3>
+            <p>Dust mite, stain and odor removal services.</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon"><i class="flaticon-office"></i></div>
+            <h3>Carpenter Services</h3>
+            <p>Repair, fitting and maintenance carpenter services.</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
